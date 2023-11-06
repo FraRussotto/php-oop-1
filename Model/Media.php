@@ -1,11 +1,11 @@
 <?php
 
-class Media{
+class Poster{
   public $file_name;
   public $name;
-  public $poster;
+  public $type = 'image';
 
-  public function __construct($_file_name, $_name){
+  public function __construct(string $_file_name, string $_name){
     $this->file_name = $_file_name;
     $this->name = $_name;
   }
