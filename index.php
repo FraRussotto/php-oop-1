@@ -27,9 +27,9 @@ require_once __DIR__ . '/db/db.php';
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><?php echo $movie->genere ?></li>
-          <li class="list-group-item"><?php echo $movie->timing ?></li>
-          <li class="list-group-item"><?php echo implode(", ", $movie->actors) ?></li>
+          <li class="list-group-item">Genere: <?php echo $movie->genere ?></li>
+          <li class="list-group-item">Durata: <?php echo $movie->timing ?>'</li>
+          <li class="list-group-item">Attori: <?php echo implode(", ", $movie->actors) ?></li>
         </ul>
       </div>
       <?php endforeach; ?>
