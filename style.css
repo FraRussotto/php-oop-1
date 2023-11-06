@@ -1,0 +1,9 @@
+body{
+  background-color: darkcyan;
+  color: white;
+}
+
+.layout-img{
+  height: 450px;
+  object-fit: cover;
+}
