@@ -1,6 +1,6 @@
 <?php
 
-class Poster{
+class Media{
   public $file_name;
   public $name;
   public $type = 'image';
