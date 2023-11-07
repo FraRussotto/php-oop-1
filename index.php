@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/Model/Productions.php';
 require_once __DIR__ . '/Model/Movie.php';
 require_once __DIR__ . '/Model/Media.php';
 require_once __DIR__ . '/db/db.php';
@@ -17,23 +18,23 @@ require_once __DIR__ . '/db/db.php';
 <!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
-<title>Movies</title>
+<title>Productions</title>
 </head>
 <body>
   <div class="container my-5 d-flex justify-content-between">
 
-    <?php foreach($movies as $movie): ?>
+    <?php foreach($productions as $production): ?>
 
     <div class="card" style="width: 18rem;">
-      <img src="asset/<?php echo $movie->image->file_name ?>" class="card-img-top layout-img" alt="<?php echo $movie->title ?>">
+      <img src="asset/<?php echo $production->image->file_name ?>" class="card-img-top layout-img" alt="<?php echo $production->title ?>">
       <div class="card-body">
-        <h5 class="card-title"><?php echo $movie->title ?></h5>
+        <h5 class="card-title"><?php echo $production->title ?></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Genere: <?php echo $movie->genere ?></li>
-        <li class="list-group-item">Durata: <?php echo $movie->timing ?>'</li>
-        <li class="list-group-item">Attori: <?php echo implode(", ", $movie->actors) ?></li>
+        <li class="list-group-item">Genere: <?php echo $production->genere ?></li>
+        <li class="list-group-item">Durata: <?php echo $production->running_time ?>'</li>
+        <li class="list-group-item">Attori: <?php echo implode(", ", $production->actors) ?></li>
       </ul>
     </div>
 
