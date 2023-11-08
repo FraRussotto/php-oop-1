@@ -1,14 +1,15 @@
 <?php
 
-require_once __DIR__ . '/Traits/Genere.php';
-require_once __DIR__ . '/Model/Productions.php';
-require_once __DIR__ . '/Model/Movie.php';
-require_once __DIR__ . '/Model/SerieTv.php';
-require_once __DIR__ . '/Model/Media.php';
-require_once __DIR__ . '/db/db.php';
-
-
-$titanic =   new Movie('Titanic', 'Dramatic', ['Leonardo DiCaprio', 'Kate Winslet', 'Billy Zane'], new Media('locandinapg9.jpg', 'Titanic'), 194, 1998);
+try {
+  require_once __DIR__ . '/Traits/Genere.php';
+  require_once __DIR__ . '/Model/Productions.php';
+  require_once __DIR__ . '/Model/Movie.php';
+  require_once __DIR__ . '/Model/SerieTv.php';
+  require_once __DIR__ . '/Model/Media.php';
+  require_once __DIR__ . '/db/db.php';
+} catch (Exception $e) {
+  $error = $e->getMessage();
+}
 
 
 ?>
@@ -29,6 +30,13 @@ $titanic =   new Movie('Titanic', 'Dramatic', ['Leonardo DiCaprio', 'Kate Winsle
 </head>
 <body>
   <div class="container my-5 d-flex flex-wrap">
+
+  <?php if(isset($error)): ?>
+    <div class="alert alert-danger" role="alert">
+      <?= $error ?>
+    </div>
+
+    <?php else: ?>
 
     <?php foreach($productions as $production): ?>
 
@@ -55,6 +63,7 @@ $titanic =   new Movie('Titanic', 'Dramatic', ['Leonardo DiCaprio', 'Kate Winsle
     </div>
 
     <?php endforeach; ?>
+  <?php endif; ?>
 
   </div>
 </body>

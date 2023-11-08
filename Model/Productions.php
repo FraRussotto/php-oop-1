@@ -9,9 +9,14 @@ class Productions{
   public $image;
 
   public function __construct(string $_title, string $_genere, array $_actors, Media $_image = null){
+
     $this->title = $_title;
     $this->genere = $_genere;
-    $this->actors = $_actors;
+    if(empty($_actors)){
+      throw new Exception("- Inserire almeno un attore per production -");
+    }else{
+      $this->actors = $_actors;
+    }
     $this->image = $_image;
   }
 
