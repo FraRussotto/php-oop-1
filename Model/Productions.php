@@ -1,8 +1,10 @@
 <?php
 
 class Productions{
+
+  use Genere;
+
   public $title;
-  public $genere;
   public $actors;
   public $image;
 
